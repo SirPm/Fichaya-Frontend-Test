@@ -48,6 +48,10 @@ const GenerateInvoice = () => {
 
     const dispatch = useDispatch();
 
+    const handleCancel = () => {
+        history.push('/');
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         history.push('/generate-invoice/preview-your-invoice');
@@ -119,7 +123,7 @@ const GenerateInvoice = () => {
                     </div>
                 </div>
                 <div className="cancel-or-create-invoice-div">
-                    <input type="button" value="CANCEL" className="cancel" />
+                    <input type="button" value="CANCEL" className="cancel" onClick={ handleCancel } />
                     <input type="submit" value="CREATE INVOICE" className="create-invoice" onClick={ 
                         () => dispatch( changeInputAction(invoiceInfo) )
                     } />

@@ -1,0 +1,168 @@
+.preview-invoice-card {
+    width: 55%;
+    height: 758.07px;
+    background: #FFFFFF;
+    border: 1px solid #EDEDED;
+    border-radius: 10px;
+}
+
+.preview-invoice-card-inner {
+    width: 90%;
+    margin: auto;
+    margin-top: 7%;
+}
+
+.card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10%;
+
+    span {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 27px;
+        letter-spacing: 0.04em;
+        color: #606077;
+        text-transform: uppercase;
+    }
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+
+    &-left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-right {
+        display: flex;
+        flex-direction: column;
+
+        &-up, &-down {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+    }
+}
+
+.card-table-heading {
+    span {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.04em;
+        color: #606077;
+    }
+}
+
+.card-table-body {
+    span {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 165.5%;
+        color: #373737;
+    }
+}
+
+.first {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    color: #606077;
+    text-transform: uppercase;
+}
+
+.second {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 23px;
+    color: #373737;
+    text-transform: uppercase;
+}
+
+.third {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+    color: #373737;
+
+    &-first {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: right;
+        letter-spacing: 0.04em;
+        color: #606077;
+        text-transform: uppercase;
+    }
+}
+
+.fourth {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: 0.04em;
+    color: #373737;
+}
+
+.vat-amt {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 165.5%;
+    color: #373737;
+}
+
+.total-amt {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 165.5%;
+    color: #01037C;
+}
+
+.sending-btn {
+    width: 280px;
+    height: 60px;
+    left: 120px;
+    top: 1003.57px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.go-back {
+    border: 1px solid #01037C;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 27px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #01037C;
+}
+
+.send {
+    background: #DEA000;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 27px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+}
