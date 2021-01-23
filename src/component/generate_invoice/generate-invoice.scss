@@ -1,0 +1,58 @@
+.heading-text-gi {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 23px;
+    letter-spacing: 0.04em;
+    color: #606077;
+    text-transform: uppercase;
+    display: block;
+    margin-top: -3%;
+}
+
+.invoice-info-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.invoice-info-card {
+    width: 48%;
+    height: 388px;
+    background: #FFFFFF;
+    border: 1px solid #EDEDED;
+    border-radius: 10px;
+}
+
+.invoice-info-card-sub-div {
+    width: 90%;
+    margin: auto;
+}
+
+.input-label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 27px;
+    color: #373737;
+}
+
+.gen-invoice-input {
+    border: 1px solid #DEA000;
+    border-radius: 5px;
+}
+
+.input-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.two-in-one-input-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancel-or-create-invoice-div {
+    position: absolute;
+    top: 100%;
+    left: 70%;
+}
