@@ -41,8 +41,8 @@ const GenerateInvoice = () => {
             setInvoiceInfo({
                 ...invoiceInfo,
                 service_amount: value,
-                vat_amount: Math.round(vatAmt),
-                total_amount: Math.round(totalAmt)
+                vat_amount: vatAmt.toFixed(2),
+                total_amount: totalAmt.toFixed(2)
             })
         }
     }
