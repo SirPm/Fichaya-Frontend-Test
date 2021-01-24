@@ -6,20 +6,8 @@
     border: none;
     width: 170px;
     height: 32px;
-    margin-top: 10%;
-    margin-bottom: 5%;
-}
-
-.ungenerated{
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 23px;
-    text-transform: uppercase;
-    color: #FF991F;
-    background-color: #FF991F;
-    opacity: 0.15;
-    border-radius: 4px;
+    margin-top: 7%;
+    margin-bottom: 3%;
 }
 
 .request-last-row {
@@ -73,6 +61,19 @@
     }
 }
 
+.ungenerated{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 23px;
+    text-transform: uppercase;
+    color: red;
+    background-color: #FF991F;
+    text-align: center;
+    opacity: 0.43;
+    border-radius: 4px;
+}
+
 .action {
     width: 30%;
     height: 40px;
@@ -83,6 +84,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: relative;
 
     &-text {
         font-style: normal;
@@ -113,10 +115,9 @@
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1292);
     display: flex;
     flex-direction: column;
-    top: 66%;
-    left: 51%;
-    width: 20%;
-    height: 14%;
+    top: -210%;
+    left: 0%;
+    width: 100%;
     display: none;
 }
 
@@ -128,13 +129,13 @@
     background-color: #ffffff;
     transform:  rotate(45deg); 
     -webkit-transform: rotate(45deg);
-    top: 95%;
-    left: 75%;
+    top: 94%;
+    left: 76%;
 }
 
 .action-choice {
     font-style: normal;
-    font-weight: normal;
+    font-weight: 500;
     font-size: 16px;
     line-height: 27px;
     background-color: #ffffff;
@@ -148,5 +149,60 @@
 
     &:hover {
         color: #01037C;
+    }
+}
+
+
+@media only screen and (max-width: 930px) {
+
+    .request-card {
+        width: 60%;
+
+        &-col-top {
+            font-size: 12px;
+        }
+
+        &-col-body {
+            font-size: 16px;
+        }
+    }
+
+    .action-text, .action-choice {
+        font-size: 14px;
+    }
+}
+
+
+@media only screen and (max-width: 775px) {
+    .request-card {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .request-card {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .request-card {
+
+        &-col-top {
+            font-size: 10px;
+        }
+
+        &-col-body {
+            font-size: 12px;
+        }
+    }
+
+    .action {
+        width: 40%;
+        margin-left: 50%;
+    }
+
+    .action-text, .action-choice {
+        font-size: 12px;
     }
 }

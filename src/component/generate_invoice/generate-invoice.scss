@@ -1,23 +1,44 @@
 .heading-text-gi {
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 23px;
     letter-spacing: 0.04em;
     color: #606077;
     text-transform: uppercase;
     display: block;
     margin-top: -3%;
+    margin-bottom: 2%;
+}
+
+.gi-btn {
+    background-color: #2E2E99;
+    border-radius: 4px;
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.87);
+    border: none;
+    width: 170px;
+    height: 32px;
+    margin-top: 7%;
+    margin-bottom: 5%;
+}
+
+input:focus {
+    outline-color: #2E2E99;
+}
+
+#total:focus {
+    outline: none;
 }
 
 .invoice-info-div {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30%;
 }
 
 .invoice-info-card {
     width: 48%;
-    height: 388px;
     background: #FFFFFF;
     border: 1px solid #EDEDED;
     border-radius: 10px;
@@ -26,6 +47,7 @@
 .invoice-info-card-sub-div {
     width: 90%;
     margin: auto;
+    margin-top: 6%;
 }
 
 .input-label {
@@ -39,6 +61,8 @@
 .gen-invoice-input {
     border: 1px solid #DEA000;
     border-radius: 5px;
+    height: 45px;
+    padding-left: 5%;
 }
 
 .input-div {
@@ -49,10 +73,126 @@
 .two-in-one-input-div {
     display: flex;
     justify-content: space-between;
+    margin: 5% 0;
+
+    div {
+        width: 47%;
+    }
 }
 
 .cancel-or-create-invoice-div {
     position: absolute;
     top: 100%;
-    left: 70%;
+    left: 52%;
+    width: 40.5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.coc-btn {
+    width: 48%;
+    height: 50px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.create-invoice {
+    background: #DEA000;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+}
+
+.cancel {
+    border: 1px solid #01037C;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #01037C;
+}
+
+
+@media only screen and (min-width: 1150px) {
+    .cancel-or-create-invoice-div {
+        top: 105%;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .cancel-or-create-invoice-div {
+        top: 98%;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .cancel-or-create-invoice-div {
+        top: 96%;
+    }
+}
+@media only screen and (max-width: 950px) {
+    .cancel-or-create-invoice-div {
+        top: 94%;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .cancel-or-create-invoice-div {
+        top: 92%;
+    }
+}
+@media only screen and (max-width: 850px) {
+    .cancel-or-create-invoice-div {
+        top: 89%;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .cancel-or-create-invoice-div {
+        top: 87%;
+    }
+}
+@media only screen and (max-width: 750px) {
+    .cancel-or-create-invoice-div {
+        top: 86%;
+    }
+
+    .coc-btn {
+        height: 45px;
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 633px) {
+    .invoice-info-div {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .invoice-info-card {
+        width: 100%;
+        padding-bottom: 10%;
+
+        &-l {
+            margin-top: 10%;
+        }
+    }
+
+    .cancel-or-create-invoice-div {
+        top: 103%;
+        width: 100%;
+        left: 0;
+    }
+
+    .coc-btn {
+        height: 45px;
+        font-size: 11px;
+        width: 48%;
+    }
 }

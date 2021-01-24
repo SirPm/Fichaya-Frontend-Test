@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 
 import fichayaLogo from '../../assets/fichaya_logo.svg';
@@ -9,20 +9,25 @@ import caretDown from '../../assets/caret_down.svg';
 import './header.scss';
 
 const Header = () => {
+    const [ open, setOpen ] = useState(false);
+    const toggleMenu = () => setOpen(!open);
+
     return (
         <div className='header'>
             <div className="header-inner-div">
                 <div className='logo'>
                     <img src={fichayaLogo} alt='fichaya logo' />
                 </div>
-                <div className='links'>
-                    <Link className='link' to='/'>dashboard</Link>
-                    <Link className='link' to='/'>customers</Link>
-                    <Link className='link' to='/'>associates</Link>
-                    <Link className='link' to='/'>requests</Link>
-                    <Link className='link' to='/'>schedules</Link>
-                    <Link className='link' to='/'>payments</Link>
-                    <Link className='link' to='/'>settings</Link>
+                <div className={` ${ open ? 'open' : '' } nav`}>
+                    <div className={` ${ open ? 'open menu-nav' : '' } links`}>
+                        <Link className={` ${ open ? 'open' : '' } activeItem menu-nav__item link`} to='/'>dashboard</Link>
+                        <Link className={` ${ open ? 'open' : '' } activeItem menu-nav__item link`} to='/'>customers</Link>
+                        <Link className={` ${ open ? 'open' : '' } activeItem menu-nav__item link`} to='/'>associates</Link>
+                        <Link className={` ${ open ? 'open' : '' } activeItem menu-nav__item link`} to='/'>requests</Link>
+                        <Link className={` ${ open ? 'open' : '' } activeItem menu-nav__item link`} to='/'>schedules</Link>
+                        <Link className={` ${ open ? 'open' : '' } activeItem menu-nav__item link`} to='/'>payments</Link>
+                        <Link className={` ${ open ? 'open' : '' } activeItem menu-nav__item link`} to='/'>settings</Link>
+                    </div>
                 </div>
                 <div className='icons'>
                     <div className="notification-icon-div icon">
@@ -34,6 +39,9 @@ const Header = () => {
                             <img src={caretDown} alt="caret down"/>
                         </div>
                     </div>
+                </div>
+                <div className="menu-btn" onClick={toggleMenu}>
+                    <span className={` ${ open ? 'open' : '' }  menu-btn__burger`}></span>
                 </div>
             </div>
         </div>
