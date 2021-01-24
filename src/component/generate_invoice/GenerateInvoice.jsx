@@ -18,7 +18,8 @@ const GenerateInvoice = () => {
         vat: "",
         service_description: "",
         service_amount: "",
-        total_amount: ""
+        total_amount: "",
+        vat_amount: ""
     });  
 
     let history = useHistory();
@@ -41,6 +42,8 @@ const GenerateInvoice = () => {
             let totalAmt = vatAmt + Number(value);
             setInvoiceInfo({
                 ...invoiceInfo,
+                service_amount: value,
+                vat_amount: vatAmt,
                 total_amount: totalAmt
             })
         }
@@ -117,14 +120,17 @@ const GenerateInvoice = () => {
                             </div>
                             <div className="input-div">
                                 <label htmlFor="" className="input-label">Total amount</label>
-                                <input className="gen-invoice-input" readOnly type="number" min="0" step="any" name="total_amount" value={invoiceInfo.total_amount} />
+                                <input className="gen-invoice-input" style={{ 
+                                    backgroundColor: "#EDEDED",
+                                    border: "none" 
+                                }} readOnly type="number" min="0" step="any" name="total_amount" value={invoiceInfo.total_amount} />
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="cancel-or-create-invoice-div">
-                    <input type="button" value="CANCEL" className="cancel" onClick={ handleCancel } />
-                    <input type="submit" value="CREATE INVOICE" className="create-invoice" onClick={ 
+                    <input type="button" value="CANCEL" className="cancel coc-btn" onClick={ handleCancel } />
+                    <input type="submit" value="CREATE INVOICE" className="create-invoice coc-btn" onClick={ 
                         () => dispatch( changeInputAction(invoiceInfo) )
                     } />
                 </div>

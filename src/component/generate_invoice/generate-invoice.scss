@@ -27,6 +27,7 @@
 .invoice-info-card-sub-div {
     width: 90%;
     margin: auto;
+    margin-top: 6%;
 }
 
 .input-label {
@@ -40,6 +41,7 @@
 .gen-invoice-input {
     border: 1px solid #DEA000;
     border-radius: 5px;
+    height: 45px;
 }
 
 .input-div {
@@ -50,10 +52,51 @@
 .two-in-one-input-div {
     display: flex;
     justify-content: space-between;
+    margin: 5% 0;
+
+    div {
+        width: 47%;
+    }
 }
 
 .cancel-or-create-invoice-div {
     position: absolute;
-    top: 100%;
-    left: 70%;
+    top: 90%;
+    left: 52%;
+    width: 40.5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.coc-btn {
+    width: 48%;
+    height: 50px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+.create-invoice {
+    background: #DEA000;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 27px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+}
+
+.cancel {
+    border: 1px solid #01037C;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 27px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #01037C;
 }
