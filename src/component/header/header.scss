@@ -298,6 +298,11 @@
 
     .link {
         font-size: 16px;
+    
+        &:hover {
+            color: #DEA000;
+            border-bottom: 2px solid #DEA000;
+        }
     }
 }
 
