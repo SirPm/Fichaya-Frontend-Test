@@ -20,13 +20,27 @@ const Header = () => {
                 </div>
                 <div className={` ${ open ? 'open' : '' } nav`}>
                     <div className={` ${ open ? 'open menu-nav' : '' } links`}>
-                        <Link className={` ${ open ? 'open' : '' } activeItem menu-nav__item link`} to='/'>dashboard</Link>
-                        <Link className={` ${ open ? 'open' : '' } activeItem menu-nav__item link`} to='/'>customers</Link>
-                        <Link className={` ${ open ? 'open' : '' } activeItem menu-nav__item link`} to='/'>associates</Link>
-                        <Link className={` ${ open ? 'open' : '' } activeItem menu-nav__item link`} to='/'>requests</Link>
-                        <Link className={` ${ open ? 'open' : '' } activeItem menu-nav__item link`} to='/'>schedules</Link>
-                        <Link className={` ${ open ? 'open' : '' } activeItem menu-nav__item link`} to='/'>payments</Link>
-                        <Link className={` ${ open ? 'open' : '' } activeItem menu-nav__item link`} to='/'>settings</Link>
+                        <Link className={` ${ open ? 'open' : '' }  menu-nav__item link`} onClick={ () => {
+                            setOpen(!open)
+                        }} to='/'>dashboard</Link>
+                        <Link className={` ${ open ? 'open' : '' }  menu-nav__item link`} onClick={ () => {
+                            setOpen(!open)
+                        }} to='/'>customers</Link>
+                        <Link className={` ${ open ? 'open' : '' }  menu-nav__item link`} onClick={ () => {
+                            setOpen(!open)
+                        }} to='/'>associates</Link>
+                        <Link className={` ${ open ? 'open' : '' }  menu-nav__item link`} onClick={ () => {
+                            setOpen(!open)
+                        }} to='/'>requests</Link>
+                        <Link className={` ${ open ? 'open' : '' }  menu-nav__item link`} onClick={ () => {
+                            setOpen(!open)
+                        }} to='/'>schedules</Link>
+                        <Link className={` ${ open ? 'open' : '' }  menu-nav__item link`} onClick={ () => {
+                            setOpen(!open)
+                        }} to='/'>payments</Link>
+                        <Link className={` ${ open ? 'open' : '' }  menu-nav__item link`} onClick={ () => {
+                            setOpen(!open)
+                        }} to='/'>settings</Link>
                     </div>
                 </div>
                 <div className='icons'>

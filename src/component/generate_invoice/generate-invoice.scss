@@ -109,6 +109,13 @@ input:focus {
     text-align: center;
     letter-spacing: 0.04em;
     color: #FFFFFF;
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+        background-color: #FFFFFF;
+        color: #DEA000;
+        border: 1px solid #DEA000;
+    }
 }
 
 .cancel {
@@ -119,6 +126,13 @@ input:focus {
     text-align: center;
     letter-spacing: 0.04em;
     color: #01037C;
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+        background-color: #01037C;
+        color: #FFFFFF;
+        border: 1px solid #01037C;
+    }
 }
 
 
@@ -194,5 +208,18 @@ input:focus {
         height: 45px;
         font-size: 11px;
         width: 48%;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .gi-btn {
+        font-size: 12px;
+        width: 130px;
+        height: 39px;
+    }
+
+    .heading-text-gi {
+        font-size: 15px;
+        margin: 3% 0;
     }
 }

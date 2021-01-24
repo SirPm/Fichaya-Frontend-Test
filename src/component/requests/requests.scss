@@ -96,6 +96,9 @@
 }
 
 .caret {  
+    display: flex;
+    align-items: center;
+
     &:hover > .action-choices {
         display: flex;
     }
@@ -204,5 +207,17 @@
 
     .action-text, .action-choice {
         font-size: 12px;
+    }
+
+    .ungenerated {
+        font-size: 10px;
+    }
+
+    .request-btn {
+        font-size: 12px;
+        width: 130px;
+        height: 39px;
+        margin-top: 10%;
+        margin-bottom: 7%;
     }
 }

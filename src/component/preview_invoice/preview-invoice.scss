@@ -226,7 +226,14 @@
     font-size: 14px;
     text-transform: uppercase;
     border: none;
-    cursor: pointer;
+    cursor: pointer;    
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+        background-color: #FFFFFF;
+        color: #DEA000;
+        border: 1px solid #DEA000;
+    }
 }
 
 .go-back {
@@ -237,6 +244,13 @@
     text-align: center;
     letter-spacing: 0.04em;
     color: #01037C;
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+        background-color: #01037C;
+        color: #FFFFFF;
+        border: 1px solid #01037C;
+    }
 }
 
 .send {
@@ -274,5 +288,11 @@
     .sending-btn {        
         font-size: 11px;
         height: 40px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .card-table-footer {
+        margin-left: 40%;
     }
 }
