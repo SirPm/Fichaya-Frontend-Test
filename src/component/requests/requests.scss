@@ -6,20 +6,8 @@
     border: none;
     width: 170px;
     height: 32px;
-    margin-top: 5%;
-    margin-bottom: 8%;
-}
-
-.ungenerated{
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 23px;
-    text-transform: uppercase;
-    color: #FF991F;
-    background-color: #FF991F;
-    opacity: 0.15;
-    border-radius: 4px;
+    margin-top: 7%;
+    margin-bottom: 3%;
 }
 
 .request-last-row {
@@ -71,6 +59,19 @@
             color: #01037C;
         }
     }
+}
+
+.ungenerated{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 23px;
+    text-transform: uppercase;
+    color: red;
+    background-color: #FF991F;
+    text-align: center;
+    opacity: 0.43;
+    border-radius: 4px;
 }
 
 .action {
@@ -134,7 +135,7 @@
 
 .action-choice {
     font-style: normal;
-    font-weight: normal;
+    font-weight: 500;
     font-size: 16px;
     line-height: 27px;
     background-color: #ffffff;

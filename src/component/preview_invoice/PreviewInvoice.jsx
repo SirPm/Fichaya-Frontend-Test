@@ -28,7 +28,7 @@ const PreviewInvoice = () => {
                         textAlign: 'center',
                         width: '85%'
                     }}
-                >Oops, something's definitely wrong. But do not fret. simply use any of the links above to navigate anywhere on our website or click <Link to="/"
+                >Oops, something's definitely wrong. But do not fret simply use any of the links above to navigate anywhere on our website or click <Link to="/"
                     style={{
                         color: "white",
                         textDecoration: "none",

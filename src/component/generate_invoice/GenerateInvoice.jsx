@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import Swal from 'sweetalert2';
 
 import { changeInputAction } from '../../redux/invoiceAction';
 
@@ -24,7 +25,6 @@ const GenerateInvoice = () => {
 
     let history = useHistory();
     
-    // console.log(invoiceInfo);
     const { customerName, email, phone, address, issueDate, dueDate, invoiceNo, vat, description, amount } = invoiceInfo;
 
     const handleChange = (e) => {
@@ -35,16 +35,14 @@ const GenerateInvoice = () => {
             [name]: value,
         });
 
-        // console.log(name);
-        // console.log(invoiceInfo.vat);
         if(name === "service_amount") {
             let vatAmt = ( (Number(invoiceInfo.vat) / 100) * Number(value) );
-            let totalAmt = Math.round(vatAmt + Number(value));
+            let totalAmt = (vatAmt + Number(value));
             setInvoiceInfo({
                 ...invoiceInfo,
                 service_amount: value,
-                vat_amount: vatAmt,
-                total_amount: totalAmt
+                vat_amount: Math.round(vatAmt),
+                total_amount: Math.round(totalAmt)
             })
         }
     }
@@ -55,14 +53,33 @@ const GenerateInvoice = () => {
         history.push('/');
     }
 
+    let permissionToSubmit = false;
+
+    let now = new Date();
+    let year = now.getFullYear();
+    let month = now.getMonth() + 1;
+    let date = now.getDate();
+
+    month = String(month);
+
+    if(month.includes('0')){
+        // don't do anything
+    } else{
+        month = `0${month}`;
+    }
+
+    let today = `${year}-${month}-${date}`;
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        history.push('/generate-invoice/preview-your-invoice');
+        if(permissionToSubmit) {
+            history.push('/generate-invoice/preview-your-invoice');
+        }
     }
 
     return (
         <div className='generate-invoice-div width'>
-            <button className="request-btn">generate invoice</button>
+            <button className="gi-btn">generate invoice</button>
             <span className="heading-text-gi">enter invoice info</span>
             <form name="invoice_info_submit" onSubmit={ handleSubmit } className="invoice-info-div">
                 <div className="invoice-info-card">
@@ -131,7 +148,20 @@ const GenerateInvoice = () => {
                 <div className="cancel-or-create-invoice-div">
                     <input type="button" value="CANCEL" className="cancel coc-btn" onClick={ handleCancel } />
                     <input type="submit" value="CREATE INVOICE" className="create-invoice coc-btn" onClick={ 
-                        () => dispatch( changeInputAction(invoiceInfo) )
+                        () => {
+                            if(invoiceInfo.issue_date !== "" && invoiceInfo.due_date !== "") {
+                                if(invoiceInfo.issue_date < today) {
+                                    Swal.fire('Oops...', 'Issue Date Cannot Be In The Past', 'error');
+                                    return;
+                                } else if(invoiceInfo.issue_date >= invoiceInfo.due_date) {
+                                    Swal.fire('Oops...', 'Due Date Must Be Greater Than The Issue Date', 'error');
+                                } else {
+                                    permissionToSubmit = true;
+                                }
+                            }
+
+                            dispatch( changeInputAction(invoiceInfo) )
+                        }
                     } />
                 </div>
             </form>
