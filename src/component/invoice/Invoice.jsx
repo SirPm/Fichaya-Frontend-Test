@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import fichayaLogo from '../../assets/fichaya_logo.svg';
 import './invoice.scss';
@@ -6,6 +7,7 @@ import './invoice.scss';
 const Invoice = (invoiceInfo) => {
     let paid = false;
     console.log(invoiceInfo.invoiceInfo.service_amount);
+    let history = useHistory();
 
     return (
         <div className="preview-invoice width">
@@ -85,7 +87,7 @@ const Invoice = (invoiceInfo) => {
                 </div>
             </div>
             <div className="invoice-preview-btns">
-                <button className="go-back sending-btn">go back</button>
+                <button className="go-back sending-btn" onClick={ () => history.push('/generate-invoice')}>go back</button>
                 <button className="send sending-btn">send to customer</button>
             </div>
         </div>

@@ -39,7 +39,7 @@ const GenerateInvoice = () => {
         // console.log(invoiceInfo.vat);
         if(name === "service_amount") {
             let vatAmt = ( (Number(invoiceInfo.vat) / 100) * Number(value) );
-            let totalAmt = vatAmt + Number(value);
+            let totalAmt = Math.round(vatAmt + Number(value));
             setInvoiceInfo({
                 ...invoiceInfo,
                 service_amount: value,
@@ -87,7 +87,7 @@ const GenerateInvoice = () => {
                         </div>
                     </div>
                 </div>
-                <div className="invoice-info-card">
+                <div className="invoice-info-card invoice-info-card-l">
                     <div className="invoice-info-card-sub-div">
                         <div className="issue-and-due-date two-in-one-input-div">
                             <div className="input-div">
@@ -123,7 +123,7 @@ const GenerateInvoice = () => {
                                 <input className="gen-invoice-input" style={{ 
                                     backgroundColor: "#EDEDED",
                                     border: "none" 
-                                }} readOnly type="number" min="0" step="any" name="total_amount" value={invoiceInfo.total_amount} />
+                                }} readOnly id="total" type="number" min="0" step="any" name="total_amount" value={invoiceInfo.total_amount} />
                             </div>
                         </div>
                     </div>

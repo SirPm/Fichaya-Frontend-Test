@@ -161,6 +161,7 @@
     line-height: 23px;
     letter-spacing: 0.04em;
     color: #373737;
+    text-transform: uppercase;
 }
 
 .card-table-footer {
@@ -222,6 +223,7 @@
     height: 50px;
     box-sizing: border-box;
     border-radius: 5px;
+    font-size: 14px;
     text-transform: uppercase;
     border: none;
     cursor: pointer;
@@ -231,7 +233,6 @@
     border: 1px solid #01037C;
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
     line-height: 27px;
     text-align: center;
     letter-spacing: 0.04em;
@@ -243,9 +244,35 @@
     border-radius: 5px;
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
     line-height: 27px;
     text-align: center;
     letter-spacing: 0.04em;
     color: #FFFFFF;
+}
+
+@media only screen and (max-width: 960px) {
+    .preview-invoice-card, .invoice-preview-btns {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .preview-invoice-card, .invoice-preview-btns {
+        width: 100%;
+    }
+
+    .first, .second, .third, .third-first, .unpaid, .fourth, .card-table-body span {
+        font-size: 12px;
+    }
+
+    .total-amt {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .sending-btn {        
+        font-size: 11px;
+        height: 40px;
+    }
 }
