@@ -45,11 +45,13 @@
     &-left {
         display: flex;
         flex-direction: column;
+        width: 65%;
     }
 
     &-right {
         display: flex;
         flex-direction: column;
+        width: 30%;
 
         &-up, &-down {
             display: flex;
