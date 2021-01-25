@@ -11,6 +11,11 @@ const invoiceReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 invoiceDetails: action.payload
             }
+        case InvoiceTypes.RESET_INPUT_FIELDS:
+            return {
+                ...state,
+                invoiceDetails: action.payload
+            }
         default:
             return state
     }

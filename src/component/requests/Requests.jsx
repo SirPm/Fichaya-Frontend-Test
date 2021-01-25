@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+import { resetInputAction } from '../../redux/invoiceAction';
 
 import caretDown from '../../assets/caret_down.svg';
 import './requests.scss';
@@ -7,6 +10,12 @@ import './requests.scss';
 const Requests = () => {
     const lastRow = true;
     const ungenerated = true;
+
+    const dispatch = useDispatch();
+
+    useEffect( () => {
+        dispatch(resetInputAction(null));
+    })
 
     return (
         <div className='requests width'>

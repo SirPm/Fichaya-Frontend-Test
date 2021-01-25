@@ -6,3 +6,10 @@ export const changeInputAction = (invoiceDetailsObject) => {
         payload: invoiceDetailsObject
     }    
 }
+
+export const resetInputAction = (defaultValue) => {
+    return {
+        type: InvoiceTypes.INVOICE_DETAILS,
+        payload: defaultValue
+    }    
+}
