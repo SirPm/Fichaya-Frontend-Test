@@ -15,6 +15,9 @@ const Requests = () => {
 
     useEffect( () => {
         dispatch(resetInputAction(null));
+
+        // scroll to the top on small browsers that have a smaller height
+        window.scrollTo(0, 0);
     })
 
     return (
@@ -68,6 +71,7 @@ const Requests = () => {
                     <span className="action-text">Action</span>
                     <div className="caret">
                         <img src={caretDown} alt="caret"/>
+                        <span className='nothing-really'></span>
                         <div className="action-choices">
                             <Link to="/" className="action-choice">Contact Customer</Link>
                             <Link to="/generate-invoice" className="action-choice">Generate Invoice</Link>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { changeInputAction } from '../../redux/invoiceAction';
@@ -10,6 +10,11 @@ const GenerateInvoiceFormUnfilled = ({ handleCancel, handleChange, dispatch, inv
     const { customerName, email, phone, address, issueDate, dueDate, invoiceNo, vat, description, amount } = invoiceInfo;
 
     const history = useHistory();
+
+    // scroll to the top of the component when it renders
+    useEffect( () => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();

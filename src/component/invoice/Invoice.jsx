@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -15,6 +15,11 @@ const Invoice = (invoiceInfo) => {
           return letter.toUpperCase();
         })
     }
+    
+    // scroll to the top of the component when it renders
+    useEffect( () => {
+        window.scrollTo(0, 0);
+    }, []);
 
     let customerName = capitalizeFirstLetters(invoiceInfo.invoiceInfo.customer_or_company_name);
   

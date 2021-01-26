@@ -7,10 +7,12 @@ const NotFound = () => {
     return (
         <div className="error-page" style={{ 
                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${error})`,
-                height: "91vh",
+                height: '100vh',
                 display: "flex",
                 justifyContent: "center",
-                alignItems: "center"
+                alignItems: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat"
             }}
         >
             <span

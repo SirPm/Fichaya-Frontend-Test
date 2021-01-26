@@ -10,6 +10,7 @@ import GenerateInvoiceFormFilled from '../generate-invoice-form-filled/GenerateI
 import './generate-invoice.scss';
 
 const GenerateInvoice = () => {
+    // Save the form data temporarily in state
     const [ invoiceInfo, setInvoiceInfo ] = useState({
         customer_or_company_name: "",
         email_address: "",
@@ -33,6 +34,7 @@ const GenerateInvoice = () => {
             [name]: value,
         });
 
+        // Automatically calculate the total amount when typing in the service amount
         if(name === "service_amount") {
             let vatAmt = ( (Number(invoiceInfo.vat) / 100) * Number(value) );
             let totalAmt = (vatAmt + Number(value));
@@ -44,6 +46,7 @@ const GenerateInvoice = () => {
             })
         }
 
+        // Also automatically calculate the total amount if for some reason the vat is been changed, only if the service amount is also filled
         if(name === "vat") {
             if(invoiceInfo.service_amount !== "") {
                 let vatAmt = ( (Number(value) / 100) * Number(invoiceInfo.service_amount) );
@@ -68,6 +71,7 @@ const GenerateInvoice = () => {
         history.push('/');
     }
 
+    // Get the current date and transform it to a format that'll be easily compared with the type that the input type date gives, to properly validate the issue date and due date fields
     let now = new Date();
     let year = now.getFullYear();
     let month = now.getMonth() + 1;
@@ -83,7 +87,7 @@ const GenerateInvoice = () => {
 
     let today = `${year}-${month}-${date}`;    
 
-    console.log(invoiceDetails);
+    // console.log(invoiceDetails);
     
     return (
         <div className='generate-invoice-div width'>

@@ -42,7 +42,6 @@
             font-weight: 500;
             font-size: 14px;
             line-height: 109.7%;
-            /* or 15px */
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: #606077;
@@ -53,7 +52,6 @@
             font-weight: 500;
             font-size: 18px;
             line-height: 30px;
-            /* identical to box height */
             letter-spacing: 0.04em;
             text-transform: uppercase;
             color: #01037C;
@@ -136,6 +134,19 @@
     left: 76%;
 }
 
+.nothing-really {
+    width: 60%;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 40%;
+    height: 10px;
+
+    &:hover > .action-choices {
+        display: flex;
+    }
+}
+
 .action-choice {
     font-style: normal;
     font-weight: 500;
@@ -145,8 +156,8 @@
     color: #606077;
     mix-blend-mode: normal;
     opacity: 0.4;
-    border: 1px solid #EDEDED;
-    margin-left: 5%;
+    border-bottom: 2px solid #EDEDED;
+    padding-left: 5%;
     cursor: pointer;
     text-decoration: none;
 

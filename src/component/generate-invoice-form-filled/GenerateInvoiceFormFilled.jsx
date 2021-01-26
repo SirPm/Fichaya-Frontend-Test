@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { changeInputAction } from '../../redux/invoiceAction';
@@ -21,6 +21,11 @@ const GenerateInvoiceFormFilled = ({ handleCancel, dispatch, today, invoiceDetai
         total_amount: invoiceDetails.total_amount,
         vat_amount: invoiceDetails.vat_amount
     });
+
+    // scroll to the top of the component when it renders
+    useEffect( () => {
+        window.scrollTo(0, 0);
+    }, []);
     
     const handleChange2 = (e) => {
         const { name, value } = e.target;
@@ -30,6 +35,7 @@ const GenerateInvoiceFormFilled = ({ handleCancel, dispatch, today, invoiceDetai
             [name]: value,
         });
 
+        // Automatically calculate the total amount when typing in the service amount
         if(name === "service_amount") {
             let vatAmt = ( (Number(newInvoiceInfo.vat) / 100) * Number(value) );
             let totalAmt = (vatAmt + Number(value));
@@ -41,8 +47,8 @@ const GenerateInvoiceFormFilled = ({ handleCancel, dispatch, today, invoiceDetai
             })
         }
 
+        // Also automatically calculate the total amount if for some reason the vat is been changed, only if the service amount is also filled
         if(name === "vat") {
-            console.log(newInvoiceInfo.service_amount)
             if(newInvoiceInfo.service_amount !== "") {
                 let vatAmt = ( (Number(value) / 100) * Number(newInvoiceInfo.service_amount) );
                 let totalAmt = (vatAmt + Number(newInvoiceInfo.service_amount));
